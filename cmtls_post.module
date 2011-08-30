@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Code for the CT Post feature.
+ */
+
+include_once('cmtls_post.features.inc');
+
+/**
+ * Implements hook_cmtls_app
+ * 
+ * @see cmtls.module
+ */
+function cmtls_post_cmtls_app() {
+  return array(
+    'cmtls_post' => array(
+      'title' => t('Posts'),
+      'description' => t('Basic posts/articles'),
+    ),
+  );
+}
+
