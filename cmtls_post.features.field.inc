@@ -10,6 +10,67 @@
 function cmtls_post_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'comment-comment_node_cmtls_post-comment_body'
+  $fields['comment-comment_node_cmtls_post-comment_body'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'comment',
+      ),
+      'field_name' => 'comment_body',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'comment_node_cmtls_post',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'comment',
+      'field_name' => 'comment_body',
+      'label' => 'Comment',
+      'required' => TRUE,
+      'settings' => array(
+        'text_processing' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 5,
+        ),
+        'type' => 'text_textarea',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   // Exported field: 'node-cmtls_post-body'
   $fields['node-cmtls_post-body'] = array(
     'field_config' => array(
@@ -525,7 +586,7 @@ function cmtls_post_field_default_fields() {
       'bundle' => 'cmtls_post',
       'default_value' => array(
         0 => array(
-          'value' => 0,
+          'value' => '0',
         ),
       ),
       'deleted' => '0',
@@ -533,10 +594,9 @@ function cmtls_post_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 6,
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -548,7 +608,7 @@ function cmtls_post_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'group_content_access',
       'label' => 'Group content visibility',
-      'required' => TRUE,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -563,6 +623,7 @@ function cmtls_post_field_default_fields() {
         ),
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
@@ -577,6 +638,7 @@ function cmtls_post_field_default_fields() {
   t('Application');
   t('Attachments');
   t('Body');
+  t('Comment');
   t('Group content visibility');
   t('Groups audience');
   t('Location');
