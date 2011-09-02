@@ -65,6 +65,14 @@ function cmtls_post_context_default_contexts() {
   $context->description = 'Community Tools posts list';
   $context->tag = 'cmtls';
   $context->conditions = array(
+    'cmtls_app_type' => array(
+      'values' => array(
+        'cmtls_post' => 'cmtls_post',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
     'node' => array(
       'values' => array(
         'cmtls_app' => 'cmtls_app',
