@@ -16,6 +16,9 @@ function cmtls_post_cmtls_app() {
     'cmtls_post' => array(
       'title' => t('Posts'),
       'description' => t('Basic posts/articles'),
+      'node types' => array(
+        'cmtls_post' => t('Post'),
+      ),
     ),
   );
 }
