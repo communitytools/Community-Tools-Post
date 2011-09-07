@@ -59,11 +59,6 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['fields']['field_cmtls_attachments']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_cmtls_attachments']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_cmtls_attachments']['field_api_classes'] = 0;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -83,6 +78,11 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Attachments (field_cmtls_attachments:fid) */
+  $handler->display->display_options['filters']['field_cmtls_attachments_fid']['id'] = 'field_cmtls_attachments_fid';
+  $handler->display->display_options['filters']['field_cmtls_attachments_fid']['table'] = 'field_data_field_cmtls_attachments';
+  $handler->display->display_options['filters']['field_cmtls_attachments_fid']['field'] = 'field_cmtls_attachments_fid';
+  $handler->display->display_options['filters']['field_cmtls_attachments_fid']['operator'] = 'not empty';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -112,6 +112,8 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = 1;
+  $handler->display->display_options['row_options']['default_field_elements'] = 1;
   /* Field: Location: Address */
   $handler->display->display_options['fields']['address']['id'] = 'address';
   $handler->display->display_options['fields']['address']['table'] = 'location';
@@ -167,6 +169,11 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Location (field_cmtls_location) */
+  $handler->display->display_options['filters']['field_cmtls_location_lid']['id'] = 'field_cmtls_location_lid';
+  $handler->display->display_options['filters']['field_cmtls_location_lid']['table'] = 'field_data_field_cmtls_location';
+  $handler->display->display_options['filters']['field_cmtls_location_lid']['field'] = 'field_cmtls_location_lid';
+  $handler->display->display_options['filters']['field_cmtls_location_lid']['operator'] = 'not empty';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -240,12 +247,15 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = 1;
+  $handler->display->display_options['row_options']['default_field_elements'] = 1;
   /* Field: Content: All taxonomy terms */
   $handler->display->display_options['fields']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['fields']['term_node_tid']['table'] = 'node';
@@ -293,6 +303,14 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Tags (field_cmtls_tags) */
+  $handler->display->display_options['filters']['field_cmtls_tags_tid']['id'] = 'field_cmtls_tags_tid';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid']['table'] = 'field_data_field_cmtls_tags';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid']['field'] = 'field_cmtls_tags_tid';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid']['reduce_duplicates'] = 1;
+  $handler->display->display_options['filters']['field_cmtls_tags_tid']['vocabulary'] = 'cmtls_tags';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
