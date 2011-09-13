@@ -23,3 +23,53 @@ function cmtls_post_cmtls_app() {
   );
 }
 
+/**
+ * Implements hook_cmtls_app_config
+ * 
+ * @see cmtls.module
+ */
+function cmtls_post_cmtls_app_config($config) {
+    
+  $defaults = array(
+    'sorting_field' => 'node_created',
+    'sorting_dir' => 'DESC'
+  );
+  
+  $settings = array_merge($defaults, isset($config['cmtls_post']) ? $config['cmtls_post'] : array());
+  
+  $form['cmtls_post'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Sorting settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#states' => array(
+      'visible' => array(
+        ':input[name="field_cmtls_app_type['.LANGUAGE_NONE.'][0][cmtls_app_type]"]' => array('value' => 'cmtls_post'),
+      ),
+    ),
+  );
+
+  $form['cmtls_post']['sorting_field'] = array(
+    '#type' => 'radios',
+    '#title' => t('Sorting field'),
+    '#default_value' => $settings['sorting_field'],
+    '#options' => array(
+      'node_created' => t('Created date'),
+      'node_title' => t('Article title'),
+      'node_comment_statistics_last_comment_timestamp' => t('Last comment time'),
+    ),
+  );
+  
+  $form['cmtls_post']['sorting_dir'] = array(
+    '#type' => 'radios',
+    '#title' => t('Sorting order'),
+    '#default_value' => $settings['sorting_dir'],
+    '#options' => array(
+      'ASC' => t('Ascending'),
+      'DESC' => t('Descending'),
+    ),
+  );
+
+  return $form;
+}
+
