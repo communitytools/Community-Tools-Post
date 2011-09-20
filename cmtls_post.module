@@ -41,7 +41,6 @@ function cmtls_post_cmtls_app_config($config) {
     '#type' => 'fieldset',
     '#title' => t('Sorting settings'),
     '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
     '#states' => array(
       'visible' => array(
         ':input[name="field_cmtls_app_type['.LANGUAGE_NONE.'][0][cmtls_app_type]"]' => array('value' => 'cmtls_post'),
@@ -72,4 +71,5 @@ function cmtls_post_cmtls_app_config($config) {
 
   return $form;
 }
+
 

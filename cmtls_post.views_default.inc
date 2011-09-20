@@ -178,6 +178,7 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['title_enable'] = 1;
   $handler->display->display_options['arguments']['nid']['title'] = 'sadasdasd';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['default_argument_skip_url'] = 0;
@@ -423,7 +424,20 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
-  /* Contextual filter: Field: Groups audience (group_audience:gid) */
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
+  /* Sort criterion: Content: Last comment time */
+  $handler->display->display_options['sorts']['last_comment_timestamp']['id'] = 'last_comment_timestamp';
+  $handler->display->display_options['sorts']['last_comment_timestamp']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['sorts']['last_comment_timestamp']['field'] = 'last_comment_timestamp';
+  $handler->display->display_options['sorts']['last_comment_timestamp']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['last_comment_timestamp']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['last_comment_timestamp']['expose']['label'] = 'Last comment time';
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['group_audience_gid']['id'] = 'group_audience_gid';
   $handler->display->display_options['arguments']['group_audience_gid']['table'] = 'field_data_group_audience';
   $handler->display->display_options['arguments']['group_audience_gid']['field'] = 'group_audience_gid';
@@ -433,8 +447,6 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['arguments']['group_audience_gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['group_audience_gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['group_audience_gid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['group_audience_gid']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['group_audience_gid']['not'] = 0;
   /* Contextual filter: Content: Application (field_cmtls_application) */
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['id'] = 'field_cmtls_application_nid';
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['table'] = 'field_data_field_cmtls_application';
