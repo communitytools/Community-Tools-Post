@@ -170,6 +170,7 @@ function cmtls_post_field_default_fields() {
           'cmtls_app' => 'cmtls_app',
           'cmtls_event' => 0,
           'cmtls_group' => 0,
+          'cmtls_media' => 0,
           'cmtls_post' => 0,
         ),
         'view' => array(
