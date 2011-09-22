@@ -178,7 +178,6 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['title_enable'] = 1;
   $handler->display->display_options['arguments']['nid']['title'] = 'sadasdasd';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['default_argument_skip_url'] = 0;
@@ -368,7 +367,7 @@ function cmtls_post_views_default_views() {
 
   $view = new view;
   $view->name = 'cmtls_posts';
-  $view->description = '';
+  $view->description = 'Community Tools posts list';
   $view->tag = 'cmtls';
   $view->base_table = 'node';
   $view->human_name = 'CT Posts';
@@ -396,6 +395,11 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = 1;
   $handler->display->display_options['row_options']['comments'] = 0;
+  /* Relationship: Group membership: Node group membership */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['required'] = 1;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -437,16 +441,6 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['sorts']['last_comment_timestamp']['order'] = 'DESC';
   $handler->display->display_options['sorts']['last_comment_timestamp']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['last_comment_timestamp']['expose']['label'] = 'Last comment time';
-  /* Contextual filter: Broken/missing handler */
-  $handler->display->display_options['arguments']['group_audience_gid']['id'] = 'group_audience_gid';
-  $handler->display->display_options['arguments']['group_audience_gid']['table'] = 'field_data_group_audience';
-  $handler->display->display_options['arguments']['group_audience_gid']['field'] = 'group_audience_gid';
-  $handler->display->display_options['arguments']['group_audience_gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['group_audience_gid']['default_argument_type'] = 'og_context';
-  $handler->display->display_options['arguments']['group_audience_gid']['default_argument_skip_url'] = 0;
-  $handler->display->display_options['arguments']['group_audience_gid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['group_audience_gid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['group_audience_gid']['summary_options']['items_per_page'] = '25';
   /* Contextual filter: Content: Application (field_cmtls_application) */
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['id'] = 'field_cmtls_application_nid';
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['table'] = 'field_data_field_cmtls_application';
@@ -459,6 +453,19 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['not'] = 0;
+  /* Contextual filter: OG membership: Group gid */
+  $handler->display->display_options['arguments']['group']['id'] = 'group';
+  $handler->display->display_options['arguments']['group']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['group']['field'] = 'group';
+  $handler->display->display_options['arguments']['group']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['arguments']['group']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['group']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['group']['default_argument_skip_url'] = 0;
+  $handler->display->display_options['arguments']['group']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['group']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['group']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['group']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['group']['not'] = 0;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
