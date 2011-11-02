@@ -72,4 +72,12 @@ function cmtls_post_cmtls_app_config($config) {
   return $form;
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * 
+ * adds autocomplete for the location
+ */
+function cmtls_post_form_cmtls_post_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module', 'cmtls_location') . '/js/cmtls.location_ac.js');
+}
 
