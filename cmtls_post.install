@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_install()
+ */
+function cmtls_post_install() {
+  // add post node fields
+  og_create_field(OG_AUDIENCE_FIELD, 'node', 'cmtls_post');
+  og_create_field(OG_CONTENT_ACCESS_FIELD, 'node', 'cmtls_post');
+  cmtls_create_field('field_cmtls_application', 'cmtls_post');
+  cmtls_create_field('field_cmtls_location', 'cmtls_post');
+  cmtls_create_field('field_cmtls_tags', 'cmtls_post');
+  cmtls_create_field('field_cmtls_attachments', 'cmtls_post');
+  node_add_body_field((object)array('type' => 'cmtls_post'), 'Content');
+  variable_set('comment_anonymous_cmtls_post', 0);
+  variable_set('comment_cmtls_post', 2);
+  variable_set('comment_default_mode_cmtls_post', 0);
+  variable_set('comment_default_per_page_cmtls_post', 50);
+  variable_set('comment_form_location_cmtls_post', 1);
+  variable_set('comment_preview_cmtls_post', 1);
+  variable_set('comment_subject_field_cmtls_post', 0);
+  variable_set('menu_options_cmtls_post', array('menu-cmtls'));
+  variable_set('menu_parent_cmtls_post', 'menu-cmtls:0');
+  variable_set('node_options_cmtls_post', array('status'));
+  variable_set('node_preview_cmtls_post', 1);
+  variable_set('node_submitted_cmtls_post', 1);
+  variable_set('og_group_type_cmtls_post', 'omitted');
+}
