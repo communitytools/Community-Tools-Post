@@ -6,12 +6,65 @@
 function cmtls_post_install() {
   // add post node fields
   og_create_field(OG_AUDIENCE_FIELD, 'node', 'cmtls_post');
+  $instance = field_info_instance('node', OG_AUDIENCE_FIELD, 'cmtls_post');
+  foreach ($instance['display'] as &$display) {
+    $display['type'] = 'hidden';
+  }
+  $instance['widget']['weight'] = 6;
+  field_update_instance($instance);
+  
   og_create_field(OG_CONTENT_ACCESS_FIELD, 'node', 'cmtls_post');
-  cmtls_create_field('field_cmtls_application', 'cmtls_post');
-  cmtls_create_field('field_cmtls_location', 'cmtls_post');
-  cmtls_create_field('field_cmtls_tags', 'cmtls_post');
-  cmtls_create_field('field_cmtls_attachments', 'cmtls_post');
-  node_add_body_field((object)array('type' => 'cmtls_post'), 'Content');
+  $instance = field_info_instance('node', OG_CONTENT_ACCESS_FIELD, 'cmtls_post');
+  foreach ($instance['display'] as &$display) {
+    $display['type'] = 'hidden';
+  }
+  $instance['widget']['weight'] = 5;
+  field_update_instance($instance);
+  
+  cmtls_create_field(array(
+    'field_config' => array(
+      'field_name' => 'field_cmtls_application'
+    ),
+    'field_instance' => array(
+      'bundle' => 'cmtls_post',
+      'widget' => array('weight' => 7),
+    ),
+  ));
+  
+  cmtls_create_field(array(
+    'field_config' => array(
+      'field_name' => 'field_cmtls_location'
+    ),
+    'field_instance' => array(
+      'bundle' => 'cmtls_post',
+      'widget' => array('weight' => 3),
+    ),
+  ));
+  
+  cmtls_create_field(array(
+    'field_config' => array(
+      'field_name' => 'field_cmtls_tags'
+    ),
+    'field_instance' => array(
+      'bundle' => 'cmtls_post',
+      'widget' => array('weight' => 1),
+    ),
+  ));
+  
+  cmtls_create_field(array(
+    'field_config' => array(
+      'field_name' => 'field_cmtls_attachments'
+    ),
+    'field_instance' => array(
+      'bundle' => 'cmtls_post',
+      'widget' => array('weight' => 4),
+    ),
+  ));
+  
+  $instance = node_add_body_field((object)array('type' => 'cmtls_post'), 'Content');
+  $instance['widget']['weight'] = 2;
+  field_update_instance($instance);
+  
   variable_set('comment_anonymous_cmtls_post', 0);
   variable_set('comment_cmtls_post', 2);
   variable_set('comment_default_mode_cmtls_post', 0);
