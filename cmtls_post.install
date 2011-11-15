@@ -61,9 +61,19 @@ function cmtls_post_install() {
     ),
   ));
   
-  $instance = node_add_body_field((object)array('type' => 'cmtls_post'), 'Content');
-  $instance['widget']['weight'] = 2;
-  field_update_instance($instance);
+  cmtls_create_field(array(
+    'field_config' => array(
+      'field_name' => 'body'
+    ),
+    'field_instance' => array(
+      'bundle' => 'cmtls_post',
+      'label' => 'Post',
+    ),
+  ));
+  
+  $settings = field_bundle_settings('node', 'cmtls_post');
+  $settings['view_modes']['cmtls_wall']['custom_settings'] = TRUE;
+  $settings = field_bundle_settings('node', 'cmtls_post', $settings);
   
   variable_set('comment_anonymous_cmtls_post', 0);
   variable_set('comment_cmtls_post', 2);
