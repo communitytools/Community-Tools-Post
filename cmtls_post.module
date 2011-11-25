@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Implementation of hook_ctools_plugin_api().
  */
@@ -30,7 +29,7 @@ function cmtls_post_views_api() {
 function cmtls_post_node_info() {
   $items = array(
     'cmtls_post' => array(
-      'name' => t('CT Post'),
+      'name' => t('Post'),
       'base' => 'node_content',
       'description' => t('Community Tools basic content'),
       'has_title' => '1',
@@ -40,21 +39,6 @@ function cmtls_post_node_info() {
   );
   return $items;
 }
-
-/**
- * Context API implementations
- */
-include_once('cmtls_post.contexts.inc');
-
-/**
- * DS API implementations
- */
-include_once('cmtls_post.ds.inc');
-
-/**
- * Context API implementations
- */
-include_once('cmtls_post.views.inc');
 
 /**
  * Implements hook_cmtls_app

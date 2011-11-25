@@ -82,8 +82,8 @@ function cmtls_post_install() {
   variable_set('comment_form_location_cmtls_post', 1);
   variable_set('comment_preview_cmtls_post', 1);
   variable_set('comment_subject_field_cmtls_post', 0);
-  variable_set('menu_options_cmtls_post', array('menu-cmtls'));
-  variable_set('menu_parent_cmtls_post', 'menu-cmtls:0');
+  variable_set('menu_options_cmtls_post', array('menu-cmtls-groups'));
+  variable_set('menu_parent_cmtls_post', 'menu-cmtls-groups:0');
   variable_set('node_options_cmtls_post', array('status'));
   variable_set('node_preview_cmtls_post', 1);
   variable_set('node_submitted_cmtls_post', 1);
