@@ -1,44 +1,6 @@
 <?php
 
-/**
- * Implementation of hook_ctools_plugin_api().
- */
-function cmtls_post_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "context" && $api == "context") {
-    return array("version" => "3");
-  }
-  if ($module == 'ds' && $api == 'ds') {
-    return array('version' => 1);
-  }
-}
-
-/**
- * Implementation of hook_views_api().
- */
-function cmtls_post_views_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "views" && $api == "views_default") {
-    return array("version" => "3.0");
-  }
-}
-
-/**
- * Implementation of hook_node_info().
- */
-function cmtls_post_node_info() {
-  $items = array(
-    'cmtls_post' => array(
-      'name' => t('Post'),
-      'base' => 'node_content',
-      'description' => t('Community Tools basic content'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-  );
-  return $items;
-}
+include_once('cmtls_post.features.inc');
 
 /**
  * Implements hook_cmtls_app
@@ -105,13 +67,3 @@ function cmtls_post_cmtls_app_config($config) {
 
   return $form;
 }
-
-/**
- * Implements hook_form_FORM_ID_alter().
- * 
- * adds autocomplete for the location
- */
-function cmtls_post_form_cmtls_post_node_form_alter(&$form, &$form_state, $form_id) {
-  drupal_add_js(drupal_get_path('module', 'cmtls') . '/js/cmtls.location_ac.js');
-}
-

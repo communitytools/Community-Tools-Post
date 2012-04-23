@@ -4,77 +4,6 @@
  * Implements hook_install()
  */
 function cmtls_post_install() {
-  // add post node fields
-  og_create_field(OG_AUDIENCE_FIELD, 'node', 'cmtls_post');
-  $instance = field_info_instance('node', OG_AUDIENCE_FIELD, 'cmtls_post');
-  foreach ($instance['display'] as &$display) {
-    $display['type'] = 'hidden';
-  }
-  $instance['widget']['weight'] = 6;
-  field_update_instance($instance);
-  
-  og_create_field(OG_CONTENT_ACCESS_FIELD, 'node', 'cmtls_post');
-  $instance = field_info_instance('node', OG_CONTENT_ACCESS_FIELD, 'cmtls_post');
-  foreach ($instance['display'] as &$display) {
-    $display['type'] = 'hidden';
-  }
-  $instance['widget']['weight'] = 5;
-  field_update_instance($instance);
-  
-  cmtls_create_field(array(
-    'field_config' => array(
-      'field_name' => 'field_cmtls_application'
-    ),
-    'field_instance' => array(
-      'bundle' => 'cmtls_post',
-      'widget' => array('weight' => 7),
-    ),
-  ));
-  
-  cmtls_create_field(array(
-    'field_config' => array(
-      'field_name' => 'field_cmtls_location'
-    ),
-    'field_instance' => array(
-      'bundle' => 'cmtls_post',
-      'widget' => array('weight' => 3),
-    ),
-  ));
-  
-  cmtls_create_field(array(
-    'field_config' => array(
-      'field_name' => 'field_cmtls_tags'
-    ),
-    'field_instance' => array(
-      'bundle' => 'cmtls_post',
-      'widget' => array('weight' => 1),
-    ),
-  ));
-  
-  cmtls_create_field(array(
-    'field_config' => array(
-      'field_name' => 'field_cmtls_attachments'
-    ),
-    'field_instance' => array(
-      'bundle' => 'cmtls_post',
-      'widget' => array('weight' => 4),
-    ),
-  ));
-  
-  cmtls_create_field(array(
-    'field_config' => array(
-      'field_name' => 'body'
-    ),
-    'field_instance' => array(
-      'bundle' => 'cmtls_post',
-      'label' => 'Post',
-    ),
-  ));
-  
-  $settings = field_bundle_settings('node', 'cmtls_post');
-  $settings['view_modes']['cmtls_wall']['custom_settings'] = TRUE;
-  $settings = field_bundle_settings('node', 'cmtls_post', $settings);
-  
   variable_set('comment_anonymous_cmtls_post', 0);
   variable_set('comment_cmtls_post', 2);
   variable_set('comment_default_mode_cmtls_post', 0);
@@ -82,10 +11,12 @@ function cmtls_post_install() {
   variable_set('comment_form_location_cmtls_post', 1);
   variable_set('comment_preview_cmtls_post', 1);
   variable_set('comment_subject_field_cmtls_post', 0);
-  variable_set('menu_options_cmtls_post', array('menu-cmtls-groups'));
-  variable_set('menu_parent_cmtls_post', 'menu-cmtls-groups:0');
   variable_set('node_options_cmtls_post', array('status'));
-  variable_set('node_preview_cmtls_post', 1);
+  variable_set('node_preview_cmtls_post', 0);
   variable_set('node_submitted_cmtls_post', 1);
   variable_set('og_group_type_cmtls_post', 'omitted');
+  
+  $settings = variable_get('field_bundle_settings', array());
+  $settings['node']['cmtls_post']['view_modes']['cmtls_teaser']['custom_settings'] = TRUE;
+  variable_set('field_bundle_settings', $settings);
 }
