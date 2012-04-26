@@ -33,19 +33,19 @@ function cmtls_post_context_default_contexts() {
           'module' => 'views',
           'delta' => 'cb129c8a19431ae6b2fd1711646e2de2',
           'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'views-d3b739be3a716e61b54f0c1254eefd60' => array(
-          'module' => 'views',
-          'delta' => 'd3b739be3a716e61b54f0c1254eefd60',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-27',
         ),
         'views-53e22d565fc4333e016372c7c33e1bfc' => array(
           'module' => 'views',
           'delta' => '53e22d565fc4333e016372c7c33e1bfc',
           'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '-26',
+        ),
+        'views-d3b739be3a716e61b54f0c1254eefd60' => array(
+          'module' => 'views',
+          'delta' => 'd3b739be3a716e61b54f0c1254eefd60',
+          'region' => 'sidebar_second',
+          'weight' => '-25',
         ),
         'views-cmtls_common_elements-block_2' => array(
           'module' => 'views',
