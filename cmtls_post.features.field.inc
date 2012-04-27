@@ -614,7 +614,7 @@ function cmtls_post_field_default_fields() {
           'opt_group' => 'auto',
         ),
         'type' => 'group_audience',
-        'weight' => '6',
+        'weight' => '8',
       ),
       'widget_type' => 'group_audience',
     ),
