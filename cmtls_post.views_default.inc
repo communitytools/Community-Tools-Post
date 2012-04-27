@@ -153,6 +153,29 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $translatables['cmtls_posts'] = array(
+    t('Master'),
+    t('Posts'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('group membership'),
+    t('field_cmtls_application'),
+    t('Post date'),
+    t('Title'),
+    t('Last comment time'),
+    t('Application content block'),
+    t('All posts in an application'),
+    t('All'),
+    t('All content page'),
+    t('Page with a full list of posts'),
+  );
   $export['cmtls_posts'] = $view;
 
   return $export;
