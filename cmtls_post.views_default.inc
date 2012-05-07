@@ -148,7 +148,6 @@ function cmtls_post_views_default_views() {
   $handler = $view->new_display('page', 'All content page', 'cmtls_post_all_content_page');
   $handler->display->display_options['display_description'] = 'Page with a full list of posts';
   $handler->display->display_options['path'] = 'cmtls/posts';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Posts';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
