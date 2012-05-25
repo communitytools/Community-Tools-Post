@@ -17,8 +17,11 @@ function cmtls_post_install() {
   variable_set('og_group_type_cmtls_post', 'omitted');
   
   // enable DS view modes
-  $settings = variable_get('field_bundle_settings', array());
-  $settings['node']['cmtls_post']['view_modes']['cmtls_teaser']['custom_settings'] = TRUE;
-  $settings['comment']['comment_node_cmtls_post']['view_modes']['cmtls_teaser']['custom_settings'] = TRUE;
-  variable_set('field_bundle_settings', $settings);
+  $settings = variable_get('field_bundle_settings_node__cmtls_post', array());
+  $settings['view_modes']['cmtls_teaser']['custom_settings'] = TRUE;
+  variable_set('field_bundle_settings_node__cmtls_post', $settings);
+  
+  $settings = variable_get('field_bundle_settings_comment__comment_node_cmtls_post', array());
+  $settings['view_modes']['cmtls_teaser']['custom_settings'] = TRUE;
+  variable_set('field_bundle_settings_comment__comment_node_cmtls_post', $settings);
 }
