@@ -51,7 +51,7 @@ function cmtls_post_context_default_contexts() {
           'module' => 'views',
           'delta' => '0d26dd0aa81634fc961ec5e8e8191976',
           'region' => 'preface_first',
-          'weight' => '-10',
+          'weight' => '-6',
         ),
       ),
     ),
