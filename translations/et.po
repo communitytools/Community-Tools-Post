@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2012-05-25 16:40+0300\n"
-"PO-Revision-Date: 2012-05-25 16:40+0300\n"
+"POT-Creation-Date: 2012-05-28 15:25+0300\n"
+"PO-Revision-Date: 2012-05-28 15:25+0300\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Estonian <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr ""
 
 #: cmtls_post.features.field.inc:709
 msgid "Application"
-msgstr ""
+msgstr "Tööriist"
 
 #: cmtls_post.features.field.inc:710
 msgid "Attachments"
@@ -49,7 +49,7 @@ msgstr "Kommentaar"
 
 #: cmtls_post.features.field.inc:712
 msgid "Group content visibility"
-msgstr ""
+msgstr "Nähtavus"
 
 #: cmtls_post.features.field.inc:713
 msgid "Groups audience"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: cmtls_post.views_default.inc:157 cmtls_post.module:13
 msgid "Posts"
-msgstr "Postitusi"
+msgstr "Postitused"
 
 #: cmtls_post.views_default.inc:158
 msgid "more"
@@ -161,11 +161,11 @@ msgstr ""
 
 #: cmtls_post.module:38
 msgid "Sorting settings"
-msgstr ""
+msgstr "Järjestus"
 
 #: cmtls_post.module:49
 msgid "Sorting field"
-msgstr ""
+msgstr "Järjestuse väli"
 
 #: cmtls_post.module:52
 msgid "Created date"
@@ -173,11 +173,11 @@ msgstr "Loomise kuupäev"
 
 #: cmtls_post.module:53
 msgid "Article title"
-msgstr ""
+msgstr "Postituse pealkiri"
 
 #: cmtls_post.module:60
 msgid "Sorting order"
-msgstr ""
+msgstr "Järjekord"
 
 #: cmtls_post.module:63
 msgid "Ascending"
