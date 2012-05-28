@@ -1,0 +1,201 @@
+# $Id$
+#
+# Estonian translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  cmtls_post.context.inc: n/a
+#  cmtls_post.features.field.inc: n/a
+#  cmtls_post.features.inc: n/a
+#  cmtls_post.module: n/a
+#  cmtls_post.views_default.inc: n/a
+#  cmtls_post.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2012-05-25 16:40+0300\n"
+"PO-Revision-Date: 2012-05-25 16:40+0300\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Estonian <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: cmtls_post.context.inc:63;107
+msgid "CT post"
+msgstr ""
+
+#: cmtls_post.context.inc:64
+msgid "Community Tools single post page"
+msgstr ""
+
+#: cmtls_post.context.inc:108
+msgid "Community Tools posts page"
+msgstr ""
+
+#: cmtls_post.features.field.inc:709
+msgid "Application"
+msgstr ""
+
+#: cmtls_post.features.field.inc:710
+msgid "Attachments"
+msgstr "Manused"
+
+#: cmtls_post.features.field.inc:711
+msgid "Comment"
+msgstr "Kommentaar"
+
+#: cmtls_post.features.field.inc:712
+msgid "Group content visibility"
+msgstr ""
+
+#: cmtls_post.features.field.inc:713
+msgid "Groups audience"
+msgstr ""
+
+#: cmtls_post.features.field.inc:714
+msgid "Location"
+msgstr "Asukoht"
+
+#: cmtls_post.features.field.inc:715 cmtls_post.features.inc:41 cmtls_post.module:16
+msgid "Post"
+msgstr "Postitus"
+
+#: cmtls_post.features.field.inc:716
+msgid "Tags"
+msgstr "Sildid"
+
+#: cmtls_post.features.inc:43
+msgid "Community Tools basic content"
+msgstr ""
+
+#: cmtls_post.features.inc:45 cmtls_post.views_default.inc:170
+msgid "Title"
+msgstr "Pealkiri"
+
+#: cmtls_post.views_default.inc:156
+msgid "Master"
+msgstr ""
+
+#: cmtls_post.views_default.inc:157 cmtls_post.module:13
+msgid "Posts"
+msgstr "Postitusi"
+
+#: cmtls_post.views_default.inc:158
+msgid "more"
+msgstr "veel"
+
+#: cmtls_post.views_default.inc:159
+msgid "Apply"
+msgstr "Rakenda"
+
+#: cmtls_post.views_default.inc:160
+msgid "Reset"
+msgstr "Lähtesta"
+
+#: cmtls_post.views_default.inc:161
+msgid "Sort by"
+msgstr "Sorteerimise alus"
+
+#: cmtls_post.views_default.inc:162
+msgid "Asc"
+msgstr "Kasvav"
+
+#: cmtls_post.views_default.inc:163
+msgid "Desc"
+msgstr "Kahanev"
+
+#: cmtls_post.views_default.inc:164
+msgid "Items per page"
+msgstr "Kirjeid lehel"
+
+#: cmtls_post.views_default.inc:165
+msgid "- All -"
+msgstr "- Kõik -"
+
+#: cmtls_post.views_default.inc:166
+msgid "Offset"
+msgstr "Nihe"
+
+#: cmtls_post.views_default.inc:167
+msgid "group membership"
+msgstr ""
+
+#: cmtls_post.views_default.inc:168
+msgid "field_cmtls_application"
+msgstr ""
+
+#: cmtls_post.views_default.inc:169
+msgid "Post date"
+msgstr "Postituse kuupäev"
+
+#: cmtls_post.views_default.inc:171 cmtls_post.module:54
+msgid "Last comment time"
+msgstr "Viimase kommentaari aeg"
+
+#: cmtls_post.views_default.inc:172
+msgid "Application content block"
+msgstr ""
+
+#: cmtls_post.views_default.inc:173
+msgid "All posts in an application"
+msgstr ""
+
+#: cmtls_post.views_default.inc:174
+msgid "All"
+msgstr "Kõik"
+
+#: cmtls_post.views_default.inc:175
+msgid "All content page"
+msgstr ""
+
+#: cmtls_post.views_default.inc:176
+msgid "Page with a full list of posts"
+msgstr ""
+
+#: cmtls_post.module:14
+msgid "Basic posts/articles"
+msgstr ""
+
+#: cmtls_post.module:38
+msgid "Sorting settings"
+msgstr ""
+
+#: cmtls_post.module:49
+msgid "Sorting field"
+msgstr ""
+
+#: cmtls_post.module:52
+msgid "Created date"
+msgstr "Loomise kuupäev"
+
+#: cmtls_post.module:53
+msgid "Article title"
+msgstr ""
+
+#: cmtls_post.module:60
+msgid "Sorting order"
+msgstr ""
+
+#: cmtls_post.module:63
+msgid "Ascending"
+msgstr "Kasvav"
+
+#: cmtls_post.module:64
+msgid "Descending"
+msgstr "Kahanev"
+
+#: cmtls_post.info:0
+msgid "CT Post"
+msgstr ""
+
+#: cmtls_post.info:0
+msgid "Community Tools basic post application"
+msgstr ""
+
+#: cmtls_post.info:0
+msgid "Community Tools"
+msgstr ""
+
