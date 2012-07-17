@@ -29,23 +29,29 @@ function cmtls_post_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'cmtls-cmtls_subscribe' => array(
+          'module' => 'cmtls',
+          'delta' => 'cmtls_subscribe',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'views-cb129c8a19431ae6b2fd1711646e2de2' => array(
           'module' => 'views',
           'delta' => 'cb129c8a19431ae6b2fd1711646e2de2',
           'region' => 'sidebar_second',
-          'weight' => '-27',
+          'weight' => '-9',
         ),
         'views-53e22d565fc4333e016372c7c33e1bfc' => array(
           'module' => 'views',
           'delta' => '53e22d565fc4333e016372c7c33e1bfc',
           'region' => 'sidebar_second',
-          'weight' => '-26',
+          'weight' => '-8',
         ),
         'views-d3b739be3a716e61b54f0c1254eefd60' => array(
           'module' => 'views',
           'delta' => 'd3b739be3a716e61b54f0c1254eefd60',
           'region' => 'sidebar_second',
-          'weight' => '-25',
+          'weight' => '-7',
         ),
         'views-0d26dd0aa81634fc961ec5e8e8191976' => array(
           'module' => 'views',
@@ -95,6 +101,12 @@ function cmtls_post_context_default_contexts() {
           'module' => 'views',
           'delta' => 'f500b4c1e20873481066a87edcb14025',
           'region' => 'content',
+          'weight' => '-10',
+        ),
+        'cmtls-cmtls_subscribe' => array(
+          'module' => 'cmtls',
+          'delta' => 'cmtls_subscribe',
+          'region' => 'sidebar_second',
           'weight' => '-10',
         ),
       ),
