@@ -43,7 +43,7 @@ function cmtls_post_default_rules_configuration() {
               { "mail" : {
                   "to" : "\\u0022[list-item:field-cmtls-firstname] [list-item:field-cmtls-lastname]\\u0022 \\u003C[list-item:mail]\\u003E",
                   "subject" : "[site:name] has new content",
-                  "message" : "Hello [list-item:field-cmtls-firstname],\\u000D\\u000A\\u000D\\u000A[site:name] has new post \\u0022[node:title]\\u0022:\\u000D\\u000A\\u000D\\u000A[node:body]\\u000D\\u000A\\u000D\\u000A[node:url]\\u000D\\u000A---\\u000D\\u000AYou can change notification settings for \\u0022[entity-fetched:title]\\u0022 at [entity-fetched:url].",
+                  "message" : "Hello [list-item:field-cmtls-firstname],\\r\\n\\r\\n[site:name] has new post \\u0022[node:title]\\u0022:\\r\\n\\r\\n[node:body]\\r\\n\\r\\n[node:url]\\r\\n---\\r\\nYou can change notification settings for \\u0022[entity-fetched:title]\\u0022 at [entity-fetched:url].",
                   "language" : [ "" ]
                 }
               }
@@ -103,7 +103,7 @@ function cmtls_post_default_rules_configuration() {
               { "mail" : {
                   "to" : "\\u0022[list-item:field-cmtls-firstname] [list-item:field-cmtls-lastname]\\u0022 \\u003C[list-item:mail]\\u003E",
                   "subject" : "[site:name] - [comment:author:field-cmtls-firstname] [comment:author:field-cmtls-lastname] has commented on: [comment:node]",
-                  "message" : "[comment:author:field-cmtls-firstname] [comment:author:field-cmtls-lastname] commented on \\u0022[comment:node]\\u0022\\u000D\\u000A\\u000D\\u000A[comment:body]\\u000D\\u000A\\u000D\\u000A[comment:url]\\u000D\\u000A---\\u000D\\u000AYou can change notification settings for \\u0022[comment:node]\\u0022 at [comment:node:url].",
+                  "message" : "[comment:author:field-cmtls-firstname] [comment:author:field-cmtls-lastname] commented on \\u0022[comment:node]\\u0022\\r\\n\\r\\n[comment:body]\\r\\n\\r\\n[comment:url]\\r\\n---\\r\\nYou can change notification settings for \\u0022[comment:node]\\u0022 at [comment:node:url].",
                   "language" : [ "" ]
                 }
               }

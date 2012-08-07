@@ -47,6 +47,17 @@ function cmtls_post_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'comment_node_cmtls_post';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'cmtls_comment_spam_flag_link' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:4:{s:8:"sanitize";i:0;s:7:"context";s:28:"argument_entity_id:comment_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";}s:4:"type";s:5:"token";s:7:"subtype";s:45:"comment:flag-cmtls-inappropriate-comment-link";}',
+        'load_terms' => 0,
+      ),
+    ),
     'post_date' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -160,12 +171,16 @@ function cmtls_post_ds_layout_settings_info() {
         1 => 'post_date',
         2 => 'comment_body',
       ),
+      'footer' => array(
+        0 => 'cmtls_comment_spam_flag_link',
+      ),
     ),
     'fields' => array(
       'ds_user_picture' => 'left_column',
       'author' => 'middle',
       'post_date' => 'middle',
       'comment_body' => 'middle',
+      'cmtls_comment_spam_flag_link' => 'footer',
     ),
     'classes' => array(),
   );
