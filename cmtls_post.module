@@ -4,7 +4,7 @@ include_once('cmtls_post.features.inc');
 
 /**
  * Implements hook_cmtls_app
- * 
+ *
  * @see cmtls.module
  */
 function cmtls_post_cmtls_app() {
@@ -21,18 +21,18 @@ function cmtls_post_cmtls_app() {
 
 /**
  * Implements hook_cmtls_app_config
- * 
+ *
  * @see cmtls.module
  */
 function cmtls_post_cmtls_app_config($config) {
-    
+
   $defaults = array(
-    'sorting_field' => 'node_created',
-    'sorting_dir' => 'DESC'
+    'cmtls_post_sorting_field' => 'cmtls_post_created',
+    'cmtls_post_sorting_dir' => 'cmtls_post_desc'
   );
-  
+
   $settings = array_merge($defaults, isset($config['cmtls_post']) ? $config['cmtls_post'] : array());
-  
+
   $form['cmtls_post'] = array(
     '#type' => 'fieldset',
     '#title' => t('Sorting settings'),
@@ -44,26 +44,76 @@ function cmtls_post_cmtls_app_config($config) {
     ),
   );
 
-  $form['cmtls_post']['sorting_field'] = array(
+  $form['cmtls_post']['cmtls_post_sorting_field'] = array(
     '#type' => 'radios',
     '#title' => t('Sorting field'),
-    '#default_value' => $settings['sorting_field'],
+    '#default_value' => $settings['cmtls_post_sorting_field'],
     '#options' => array(
-      'node_created' => t('Created date'),
-      'node_title' => t('Article title'),
-      'node_comment_statistics_last_comment_timestamp' => t('Last comment time'),
+      'cmtls_post_created' => t('Created date'),
+      'cmtls_post_title' => t('Article title'),
+      'cmtls_post_comment' => t('Last comment time'),
     ),
   );
-  
-  $form['cmtls_post']['sorting_dir'] = array(
+
+  $form['cmtls_post']['cmtls_post_sorting_dir'] = array(
     '#type' => 'radios',
     '#title' => t('Sorting order'),
-    '#default_value' => $settings['sorting_dir'],
+    '#default_value' => $settings['cmtls_post_sorting_dir'],
     '#options' => array(
-      'ASC' => t('Ascending'),
-      'DESC' => t('Descending'),
+      'cmtls_post_asc' => t('Ascending'),
+      'cmtls_post_desc' => t('Descending'),
     ),
   );
 
   return $form;
+}
+
+/**
+ * Implements hook_views_query_alter().
+ *
+ * Sorts the application page view by instance configuration.
+ *
+ * @see cmtls_post_cmtls_app_config()
+ */
+function cmtls_post_views_query_alter(&$view, &$query) {
+  if($view->name == 'cmtls_posts') {
+    $config = cmtls_get_app_config();
+
+    // The field to sort by.
+    if($config['cmtls_post']['cmtls_post_sorting_field'] && !isset($_POST['sort_by'])) {
+      switch ($config['cmtls_post']['cmtls_post_sorting_field']) {
+        case 'cmtls_post_created':
+            $sort = 'node_created';
+          break;
+        case 'cmtls_post_title':
+            $sort = 'node_title';
+          break;
+        case 'cmtls_post_comment':
+            $sort = 'node_comment_statistics_last_comment_timestamp';
+          break;
+        default:
+            $sort = 'node_created';
+          break;
+      }
+
+      $query->orderby[1]['field'] = $_POST['sort_by'] = $_GET['sort_by'] = $sort;
+    }
+
+    // The sort direction.
+    if($config['cmtls_post']['cmtls_post_sorting_dir'] && !isset($_POST['sort_order'])) {
+      switch ($config['cmtls_post']['cmtls_post_sorting_dir']) {
+        case 'cmtls_post_asc':
+            $dir = 'ASC';
+          break;
+        case 'cmtls_post_desc':
+            $dir = 'DESC';
+          break;
+        default:
+            $dir = 'DESC';
+          break;
+      }
+
+      $query->orderby[1]['direction'] = $_POST['sort_order'] = $_GET['sort_order'] = $dir;
+    }
+  }
 }
