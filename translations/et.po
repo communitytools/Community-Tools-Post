@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2012-05-28 15:25+0300\n"
-"PO-Revision-Date: 2012-05-28 15:25+0300\n"
+"POT-Creation-Date: 2012-11-05 14:13+0200\n"
+"PO-Revision-Date: 2012-11-05 14:13+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Estonian <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -35,43 +35,43 @@ msgstr ""
 msgid "Community Tools posts page"
 msgstr ""
 
-#: cmtls_post.features.field.inc:709
+#: cmtls_post.features.field.inc:710
 msgid "Application"
 msgstr "Tööriist"
 
-#: cmtls_post.features.field.inc:710
+#: cmtls_post.features.field.inc:711
 msgid "Attachments"
 msgstr "Manused"
 
-#: cmtls_post.features.field.inc:711
+#: cmtls_post.features.field.inc:712
 msgid "Comment"
 msgstr "Kommentaar"
 
-#: cmtls_post.features.field.inc:712
-msgid "Group content visibility"
-msgstr "Nähtavus"
-
 #: cmtls_post.features.field.inc:713
+msgid "Group content visibility"
+msgstr "Sisu nähtavus"
+
+#: cmtls_post.features.field.inc:714
 msgid "Groups audience"
 msgstr ""
 
-#: cmtls_post.features.field.inc:714
+#: cmtls_post.features.field.inc:715
 msgid "Location"
 msgstr "Asukoht"
 
-#: cmtls_post.features.field.inc:715 cmtls_post.features.inc:41 cmtls_post.module:16
+#: cmtls_post.features.field.inc:716 cmtls_post.features.inc:85 cmtls_post.module:16
 msgid "Post"
 msgstr "Postitus"
 
-#: cmtls_post.features.field.inc:716
+#: cmtls_post.features.field.inc:717
 msgid "Tags"
 msgstr "Sildid"
 
-#: cmtls_post.features.inc:43
+#: cmtls_post.features.inc:87
 msgid "Community Tools basic content"
 msgstr ""
 
-#: cmtls_post.features.inc:45 cmtls_post.views_default.inc:170
+#: cmtls_post.features.inc:89 cmtls_post.views_default.inc:170
 msgid "Title"
 msgstr "Pealkiri"
 
@@ -120,7 +120,7 @@ msgid "Offset"
 msgstr "Nihe"
 
 #: cmtls_post.views_default.inc:167
-msgid "group membership"
+msgid "OG membership from node"
 msgstr ""
 
 #: cmtls_post.views_default.inc:168
