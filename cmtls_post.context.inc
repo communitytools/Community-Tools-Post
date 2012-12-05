@@ -29,6 +29,12 @@ function cmtls_post_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-232f47dca370db2ede449d3046af1658' => array(
+          'module' => 'views',
+          'delta' => '232f47dca370db2ede449d3046af1658',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'views-cb129c8a19431ae6b2fd1711646e2de2' => array(
           'module' => 'views',
           'delta' => 'cb129c8a19431ae6b2fd1711646e2de2',

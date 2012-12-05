@@ -52,8 +52,8 @@ function cmtls_post_field_group_info() {
     'label' => 'Hidden',
     'weight' => '8',
     'children' => array(
-      0 => 'field_cmtls_application',
-      1 => 'group_audience',
+      0 => 'group_audience',
+      1 => 'field_cmtls_application',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -82,6 +82,8 @@ function cmtls_post_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_cmtls_location',
+      1 => 'field_cmtls_geometry',
+      2 => 'field_cmtls_address',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
