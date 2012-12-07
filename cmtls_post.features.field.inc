@@ -299,7 +299,7 @@ function cmtls_post_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '19',
         ),
         'default' => array(
           'label' => 'above',
@@ -370,7 +370,7 @@ function cmtls_post_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '18',
         ),
         'default' => array(
           'label' => 'above',
@@ -433,7 +433,7 @@ function cmtls_post_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '15',
         ),
         'default' => array(
           'label' => 'above',
@@ -593,7 +593,7 @@ function cmtls_post_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '16',
         ),
         'default' => array(
           'label' => 'above',
@@ -680,7 +680,7 @@ function cmtls_post_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '17',
         ),
         'default' => array(
           'label' => 'above',
