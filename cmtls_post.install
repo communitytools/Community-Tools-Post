@@ -15,13 +15,45 @@ function cmtls_post_install() {
   variable_set('node_preview_cmtls_post', 0);
   variable_set('node_submitted_cmtls_post', 1);
   variable_set('og_group_type_cmtls_post', 'omitted');
-  
+
   // enable DS view modes
   $settings = variable_get('field_bundle_settings_node__cmtls_post', array());
   $settings['view_modes']['cmtls_teaser']['custom_settings'] = TRUE;
   variable_set('field_bundle_settings_node__cmtls_post', $settings);
-  
+
   $settings = variable_get('field_bundle_settings_comment__comment_node_cmtls_post', array());
   $settings['view_modes']['cmtls_teaser']['custom_settings'] = TRUE;
   variable_set('field_bundle_settings_comment__comment_node_cmtls_post', $settings);
+}
+
+/**
+ * Update 2.0-beta3
+ */
+function cmtls_post_update_7202() {
+  // Add new modules.
+  module_enable(array(
+    'geofield',
+    'geophp',
+    'addressfield',
+    'openlayers',
+    'openlayers_views',
+  ));
+
+  // Revert features so the geofield and addressfield will become available.
+  cmtls_features_revert(array('cmtls_post'));
+
+  // Convert locations to geofields and addressfields.
+  $nodes = node_load_multiple(array(), array(
+    'type' => 'cmtls_post',
+  ));
+
+  if(sizeof($nodes)) {
+    cmtls_convert_node_location($nodes);
+  }
+
+  // Delete location fields.
+  $instance = field_info_instance('node', 'field_cmtls_location', 'cmtls_post');
+  field_delete_instance($instance);
+
+  field_purge_batch(100);
 }
