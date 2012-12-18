@@ -61,7 +61,7 @@ function cmtls_post_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '2',
       'label' => 'hidden',
-      'format' => 'ds_post_date_short',
+      'format' => 'ds_post_date_cmtls_timeago',
     ),
     'author' => array(
       'weight' => '1',
@@ -178,8 +178,8 @@ function cmtls_post_ds_layout_settings_info() {
       ),
       'middle' => array(
         0 => 'author',
-        1 => 'post_date',
-        2 => 'comment_body',
+        1 => 'comment_body',
+        2 => 'post_date',
       ),
       'footer' => array(
         0 => 'cmtls_comment_spam_flag_link',
@@ -188,8 +188,8 @@ function cmtls_post_ds_layout_settings_info() {
     'fields' => array(
       'ds_user_picture' => 'left_column',
       'author' => 'middle',
-      'post_date' => 'middle',
       'comment_body' => 'middle',
+      'post_date' => 'middle',
       'cmtls_comment_spam_flag_link' => 'footer',
     ),
     'classes' => array(),
