@@ -48,7 +48,7 @@ function cmtls_post_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '8',
         ),
         'default' => array(
           'label' => 'hidden',
