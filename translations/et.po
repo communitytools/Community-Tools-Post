@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2012-11-05 14:13+0200\n"
-"PO-Revision-Date: 2012-11-05 14:13+0200\n"
+"POT-Creation-Date: 2013-01-07 16:02+0200\n"
+"PO-Revision-Date: 2013-01-07 16:02+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Estonian <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -23,47 +23,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: cmtls_post.context.inc:63;107
+#: cmtls_post.context.inc:69;113
 msgid "CT post"
 msgstr ""
 
-#: cmtls_post.context.inc:64
+#: cmtls_post.context.inc:70
 msgid "Community Tools single post page"
 msgstr ""
 
-#: cmtls_post.context.inc:108
+#: cmtls_post.context.inc:114
 msgid "Community Tools posts page"
 msgstr ""
 
-#: cmtls_post.features.field.inc:710
+#: cmtls_post.features.field.inc:722
+msgid "Address"
+msgstr "Aadress"
+
+#: cmtls_post.features.field.inc:723
 msgid "Application"
 msgstr "Tööriist"
 
-#: cmtls_post.features.field.inc:711
+#: cmtls_post.features.field.inc:724
 msgid "Attachments"
 msgstr "Manused"
 
-#: cmtls_post.features.field.inc:712
+#: cmtls_post.features.field.inc:725
 msgid "Comment"
 msgstr "Kommentaar"
 
-#: cmtls_post.features.field.inc:713
+#: cmtls_post.features.field.inc:726
 msgid "Group content visibility"
 msgstr "Sisu nähtavus"
 
-#: cmtls_post.features.field.inc:714
+#: cmtls_post.features.field.inc:727
 msgid "Groups audience"
 msgstr ""
 
-#: cmtls_post.features.field.inc:715
-msgid "Location"
-msgstr "Asukoht"
+#: cmtls_post.features.field.inc:728
+msgid "Map"
+msgstr "Kaart"
 
-#: cmtls_post.features.field.inc:716 cmtls_post.features.inc:85 cmtls_post.module:16
+#: cmtls_post.features.field.inc:729 cmtls_post.features.inc:85 cmtls_post.module:16
 msgid "Post"
 msgstr "Postitus"
 
-#: cmtls_post.features.field.inc:717
+#: cmtls_post.features.field.inc:730
 msgid "Tags"
 msgstr "Sildid"
 
