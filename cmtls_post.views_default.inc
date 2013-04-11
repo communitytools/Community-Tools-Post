@@ -10,7 +10,7 @@
 function cmtls_post_views_default_views() {
   $export = array();
 
-  $view = new view;
+  $view = new view();
   $view->name = 'cmtls_posts';
   $view->description = 'Community Tools posts list';
   $view->tag = 'cmtls';
@@ -24,18 +24,17 @@ function cmtls_post_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Posts';
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'rules';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = 1;
-  $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = 1;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'ds';
   $handler->display->display_options['row_options']['view_mode'] = 'cmtls_teaser';
@@ -49,29 +48,20 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  $handler->display->display_options['relationships']['og_membership_rel']['required'] = 1;
+  $handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
   /* Relationship: Content: Application (field_cmtls_application) */
   $handler->display->display_options['relationships']['field_cmtls_application_nid']['id'] = 'field_cmtls_application_nid';
   $handler->display->display_options['relationships']['field_cmtls_application_nid']['table'] = 'field_data_field_cmtls_application';
   $handler->display->display_options['relationships']['field_cmtls_application_nid']['field'] = 'field_cmtls_application_nid';
-  $handler->display->display_options['relationships']['field_cmtls_application_nid']['required'] = 1;
+  $handler->display->display_options['relationships']['field_cmtls_application_nid']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_cmtls_application_nid']['delta'] = '-1';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
@@ -115,6 +105,7 @@ function cmtls_post_views_default_views() {
   /* Display: Application content block */
   $handler = $view->new_display('block', 'Application content block', 'cmtls_post_app_wall_block');
   $handler->display->display_options['display_description'] = 'All posts in an application';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Application (field_cmtls_application) */
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['id'] = 'field_cmtls_application_nid';
@@ -123,12 +114,9 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['field_cmtls_application_nid']['default_argument_skip_url'] = 0;
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_cmtls_application_nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_cmtls_application_nid']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['field_cmtls_application_nid']['not'] = 0;
   /* Contextual filter: OG membership: OG group gid */
   $handler->display->display_options['arguments']['group']['id'] = 'group';
   $handler->display->display_options['arguments']['group']['table'] = 'og_membership';
@@ -137,16 +125,14 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['arguments']['group']['default_action'] = 'default';
   $handler->display->display_options['arguments']['group']['exception']['value'] = '';
   $handler->display->display_options['arguments']['group']['default_argument_type'] = 'og_context';
-  $handler->display->display_options['arguments']['group']['default_argument_skip_url'] = 0;
   $handler->display->display_options['arguments']['group']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['group']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['group']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['group']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['group']['not'] = 0;
 
   /* Display: All content page */
   $handler = $view->new_display('page', 'All content page', 'cmtls_post_all_content_page');
   $handler->display->display_options['display_description'] = 'Page with a full list of posts';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'cmtls/posts';
   $handler->display->display_options['menu']['title'] = 'Posts';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -164,6 +150,10 @@ function cmtls_post_views_default_views() {
     t('Items per page'),
     t('- All -'),
     t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
     t('OG membership from node'),
     t('field_cmtls_application'),
     t('Post date'),
