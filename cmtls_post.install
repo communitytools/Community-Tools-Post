@@ -9,7 +9,6 @@ function cmtls_post_install() {
   variable_set('comment_default_mode_cmtls_post', 0);
   variable_set('comment_default_per_page_cmtls_post', 50);
   variable_set('comment_form_location_cmtls_post', 1);
-  variable_set('comment_preview_cmtls_post', 1);
   variable_set('comment_subject_field_cmtls_post', 0);
   variable_set('node_options_cmtls_post', array('status'));
   variable_set('node_preview_cmtls_post', 0);
@@ -24,6 +23,9 @@ function cmtls_post_install() {
   $settings = variable_get('field_bundle_settings_comment__comment_node_cmtls_post', array());
   $settings['view_modes']['cmtls_teaser']['custom_settings'] = TRUE;
   variable_set('field_bundle_settings_comment__comment_node_cmtls_post', $settings);
+  
+  // Add updates.
+  cmtls_post_update_7203();
 }
 
 /**
@@ -56,4 +58,11 @@ function cmtls_post_update_7202() {
   field_delete_instance($instance);
 
   field_purge_batch(100);
+}
+
+/**
+ * Update 2.0-beta4 disable comment previews.
+ */
+function cmtls_post_update_7203() {
+  variable_set('comment_preview_cmtls_post', 0);
 }
