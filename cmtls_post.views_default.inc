@@ -35,6 +35,7 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'ds';
   $handler->display->display_options['row_options']['view_mode'] = 'cmtls_teaser';
@@ -101,6 +102,21 @@ function cmtls_post_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'cmtls_post' => 'cmtls_post',
   );
+  /* Filter criterion: Content: Tags (field_cmtls_tags) (selective) */
+  $handler->display->display_options['filters']['field_cmtls_tags_tid_selective']['id'] = 'field_cmtls_tags_tid_selective';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid_selective']['table'] = 'field_data_field_cmtls_tags';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid_selective']['field'] = 'field_cmtls_tags_tid_selective';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid_selective']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_cmtls_tags_tid_selective']['expose']['operator_id'] = 'field_cmtls_tags_tid_selective_op';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid_selective']['expose']['label'] = 'Tags';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid_selective']['expose']['operator'] = 'field_cmtls_tags_tid_selective_op';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid_selective']['expose']['identifier'] = 'tags';
+  $handler->display->display_options['filters']['field_cmtls_tags_tid_selective']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    3 => 0,
+  );
 
   /* Display: Application content block */
   $handler = $view->new_display('block', 'Application content block', 'cmtls_post_app_wall_block');
@@ -159,6 +175,7 @@ function cmtls_post_views_default_views() {
     t('Post date'),
     t('Title'),
     t('Last comment time'),
+    t('Tags'),
     t('Application content block'),
     t('All posts in an application'),
     t('All'),

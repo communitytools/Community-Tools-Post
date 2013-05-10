@@ -26,6 +26,7 @@ function cmtls_post_install() {
   
   // Add updates.
   cmtls_post_update_7203();
+  cmtls_post_update_7204();
 }
 
 /**
@@ -65,4 +66,14 @@ function cmtls_post_update_7202() {
  */
 function cmtls_post_update_7203() {
   variable_set('comment_preview_cmtls_post', 0);
+}
+
+/**
+ * Update 2.0-beta4 add Views Selective Exposed Filters for tags filter.
+ */
+function cmtls_post_update_7204() {
+  // Add new modules.
+  module_enable(array(
+    'views_filters_selective',
+  ));
 }

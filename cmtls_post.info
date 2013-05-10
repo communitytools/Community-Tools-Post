@@ -19,6 +19,7 @@ dependencies[] = node_reference
 dependencies[] = og
 dependencies[] = taxonomy
 dependencies[] = views
+dependencies[] = views_filters_selective
 datestamp = 1353679301
 features[context][] = cmtls_post_page
 features[context][] = cmtls_posts_page
