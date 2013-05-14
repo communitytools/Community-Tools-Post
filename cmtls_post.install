@@ -77,3 +77,19 @@ function cmtls_post_update_7204() {
     'views_filters_selective',
   ));
 }
+
+/**
+ * Update 2.0-beta4 add default map layer to existing content.
+ */
+function cmtls_post_update_7205() {
+  // Revert features so the layer taxonomy will become available.
+  cmtls_features_revert(array('cmtls_post'));
+
+  $nodes = node_load_multiple(array(), array(
+    'type' => 'cmtls_post',
+  ));
+
+  if(sizeof($nodes)) {
+    cmtls_node_add_default_layer($nodes);
+  }
+}
